@@ -1,0 +1,22 @@
+// Project Model
+
+const mongoose = require('mongoose')
+
+const projectSchema = new mongoose.Schema({
+
+    name: {
+        type: String,
+        required: true},
+    description: {
+        type: String,
+        required: true},
+    isActive: {
+        type: Boolean,
+        required: true,
+        default: true}
+},
+    {
+        collection: 'projects'
+    })
+
+module.exports = mongoose.model( 'Project', projectSchema )

@@ -1,0 +1,22 @@
+{
+  "name": "server-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "lint": "./node_modules/.bin/eslint **/*.js"
+  },
+
+  "author": "rathi",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "eslint": "^5.16.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.5.13",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.19.1"
+  }
+}
