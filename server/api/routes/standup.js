@@ -19,7 +19,7 @@ module.exports = function (router) {
     // GET: by team member Id
     router.get('/standup/:teamMemberId', function (req, res) {
         const qry = {
-            _teamMemberId: mongoose.Types.ObjectId(req.params.teamMemberId)
+            teamMemberId: mongoose.Types.ObjectId(req.params.teamMemberId)
         }
         Standup.find(qry)
             .sort({ 'createdOn': -1 })
@@ -36,6 +36,7 @@ module.exports = function (router) {
     // POST: Get new meeting note document...
     router.post('/standup', function (req, res) {
         let note = new Standup(req.body)
+        console.log('the posting body is',req.body)
         note.save(function (err, note) {
             if (err) {
                 return res.status(400).json(err)
